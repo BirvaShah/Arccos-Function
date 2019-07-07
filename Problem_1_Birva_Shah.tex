@@ -1,0 +1,44 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\usepackage[legalpaper, a4paper,margin=1mm]{geometry}
+\usepackage{textcomp}
+\usepackage{environ}
+\NewEnviron{myequation}{%
+    \begin{equation}
+    \scalebox{1.2}{$\BODY$}
+    \end{equation}
+    }
+\graphicspath{ {../images/} }
+\title{Function:- arccos(x)}
+\author{Birva Shah (Student ID: 40070973)}
+\begin{document}
+\maketitle
+\section{Problem-1}
+\subsection{Definition}
+The arccosine of x is defined as the inverse cosine function of x when -1$\leq$x$\leq$1.
+When the cosine of y is equal to x:
+\begin{myequation}%
+$$\cos y = x$$
+\end{myequation}
+Then the arccosine of x is equal to the inverse cosine function of x, which is equal to y:
+\begin{myequation}%
+$$\arccos(x) = \cos^{-1} x = y$$
+\end{myequation}
+\subsection{Domain and Range}
+The domain of arccos(x) is -1$\leq$x$\leq$1 and the range of arccos(x) is 0$\leq$y$\leq$$\pi$ \big(0\textdegree$\leq$y$\leq$180\textdegree\big).
+\subsection{Characteristics of arccos(x)}
+\begin{itemize}
+  \item This function is neither even nor odd.
+  \item It is a decreasing function.
+  \item Graph of arccos(x)
+\end{itemize}
+\includegraphics[width=100mm,scale=0.5]{arccos}
+\begin{thebibliography}{9}
+\bibitem{rapidtableswebsite}
+RapidTables,
+\\\texttt{https://www.rapidtables.com/math/trigonometry/arccos.html}
+\bibitem{emathhelp}
+Emathhelp,
+\\\texttt{https://www.emathhelp.net/notes/algebra-2/trigonometry/function-y-arccos-x/}
+\end{thebibliography}
+\end{document}
