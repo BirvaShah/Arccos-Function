@@ -1,0 +1,80 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.1in]{geometry}
+\title{Function:- arccos(x)
+\begin{large}
+\\
+\Large Problem-2
+\end{large}
+}
+\author{Birva Shah (Student ID: 40070973) }
+\date{12 July 2019}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\begin{document}
+\maketitle
+\section{Assumptions}
+\begin{itemize}
+    \item In function $arccos(x)$, x is a real number.
+    \item Function returns the value of $arccos(x)$ in radians. 
+    \item If the argument of the function is NaN, then the result is NaN.
+\end{itemize}  
+\section{Requirements}
+\begin{itemize}
+\item \textbf{ID \hspace{1.95cm}: } REQ-1
+\\
+\begin{Large}
+ \large \textbf{Type \hspace{1.15cm} : } Functional Requirement
+ \\
+ \large \textbf{ Description  : }User input should be between -1 and 1 inclusive because the domain of the function $arccos(x)$ is $-1\le x\le1$.
+ \\
+  \large \textbf{Rationale \hspace{0.4cm}:} The rationale behind this requirement is that the output of the function $arccos(x)$ is undefined if the value of x is not between -1 and 1 inclusive.
+ \\
+ \large \textbf{Difficulty \hspace{0.45cm}:} Easy
+\end{Large}
+
+\item \textbf{ID \hspace{1.95cm}: } REQ-2
+\\
+\begin{Large}
+ \large \textbf{Type \hspace{1.15cm} : } Functional Requirement
+ \\
+ \large \textbf{ Description  : } The output of the function is assumed to be in radians. One more function should be made to to convert radian values to degree values. 
+ \\
+  \large \textbf{Rationale \hspace{0.4cm}:} The rationale behind this requirement is that the scientific calculator gives the result in degree values.
+ \\
+ \large \textbf{Difficulty \hspace{0.45cm}:} Nominal
+\end{Large}
+\\
+
+\item \textbf{ID \hspace{1.95cm}: } REQ-3
+\\
+\begin{Large}
+ \large \textbf{Type \hspace{1.15cm} : } Functional Requirement
+ \\
+ \large \textbf{ Description  : } To define the inverse function, each value in the domain must correspond to exactly one value in the range and vice versa. 
+ \\
+  \large \textbf{Rationale \hspace{0.4cm}:} The rationale behind this requirement is that the original function i.e. $cos(x) where -1\le x\le1$ is one-to-one function. 
+ \\
+ \large \textbf{Difficulty \hspace{0.45cm}:} Nominal
+\end{Large}
+\end{itemize}
+\begin{thebibliography}{9}
+\bibitem{rapidtableswebsite}
+RapidTables,
+\\\texttt{https://www.rapidtables.com/math/trigonometry/arccos.html}
+\bibitem{emathhelp}
+Emathhelp,
+\\\texttt{https://www.emathhelp.net/notes/algebra-2/trigonometry/function-y-arccos-x/}
+\bibitem{microsoft}
+Microsoft,
+\\\texttt{https://docs.microsoft.com/en-us/powerapps/maker/canvas-apps/functions/function-trig}
+\bibitem{mathonweb}
+Mathonweb,
+\\\texttt{http://mathonweb.com/help_ebook/html/algorithms.htm#arcsin}
+\bibitem{cliffsnotes}
+CliffsNotes,
+\\\texttt{https://www.cliffsnotes.com/study-guides/trigonometry/inverse-functions-and-equations/inverse-cosine-and-inverse-sine}
+\end{thebibliography}
+\end{document}
