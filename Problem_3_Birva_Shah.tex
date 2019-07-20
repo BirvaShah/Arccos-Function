@@ -1,0 +1,162 @@
+\documentclass[11pt]{article}
+%\input{structure.tex}
+\usepackage{amsmath, algorithm, algpseudocode}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage[margin=0.1in]{geometry}
+\title{Function:- arccos(x)
+\begin{large}
+\\
+\Large Problem-3
+\end{large}
+}
+\author{Birva Shah (Student ID: 40070973) }
+\date{19 July 2019}
+\begin{document}
+\maketitle
+\section{Description}
+There are 2 ways to find arccos(x). One is iterative approach and the other is recursive approach. Taylor's series for the evaluation has been used.
+\begin{equation}
+    \arccos x = \frac{\pi}{2}-\sum_{n=0}^\infty\frac{(2n)!}{2^{2n}(n!)^{2}}\frac{x^{2n+1}}{(2n+1)},|x|\textless1\\
+\end{equation}
+Comparison between these two approaches have been showed in this document. The time complexity of both the algorithms is same but it has been observed that iterative approach is better than the recursive one. \\
+The recursive approach has resulted in high memory consumption compared to the other one.
+\section{Advantages and Disadvantages of Iterative Algorithm }
+\begin{itemize}
+\item If implemented during the earlier stages of the development process allows the team to find functional or design related flaws as early as possible.
+\item Easily adaptable to the ever-changing needs of the project as well as the client.
+\item It is the best suited for agile organizations and less time is spent on documenting and more on designing to implement iterative model.
+\item More resources may be required.
+\item It is not suitable for small projects project.
+\end{itemize}   
+\begin{algorithm}
+\caption{Calculating: $arccos(x)$ using Iterative Algorithm }\\
+\begin{algorithmic}\\
+\STATE \textbf{function} $PI()$
+
+  1. $pi\_value \leftarrow 0.0$
+  
+  2.	for $ k \leq 9999 $
+		
+		${\hspace{0.5cm}}$ 	$ first \leftarrow  power(-1, k)$
+		
+		${\hspace{0.5cm}}$  $ second \leftarrow (2 * k) + 1$
+		
+		${\hspace{0.5cm}}$	$ value \leftarrow first / second$
+		
+		${\hspace{0.5cm}}$	$pi\_value \leftarrow pi\_value + value $\\
+   ${\hspace{0.7cm}}$ 3.	$pi\_value \leftarrow 4 * pi\_value$\\
+   ${\hspace{0.7cm}}$ 4.	$ return pi$\_$value\\\\
+\STATE \textbf{function} $ARCCOS(x)$\\
+${\hspace{0.5cm}}$ $in: value of x$ \\
+${\hspace{0.5cm}}$ $out: calculated value of arccos(x) in radian$ \\
+  ${\hspace{0.5cm}}$  1. $ ans \leftarrow 0$\\
+	${\hspace{0.5cm}}$	2. for $n \leq 89 $\\
+		${\hspace{0.5cm}}$ ${\hspace{0.5cm}}$ 	$ a = factorial(2 * n)$\\
+		${\hspace{0.5cm}}$ ${\hspace{0.5cm}}$ $if (Double.isInfinite(a))$\\
+		${\hspace{1.5cm}}$ ${\hspace{0.5cm}}$		break
+		\\${\hspace{0.5cm}}$ ${\hspace{0.5cm}}$  $ b \leftarrow power(2, (2 * n))$\\
+		${\hspace{0.5cm}}$ ${\hspace{0.5cm}}$	$ c \leftarrow factorial(n)$\\
+		${\hspace{0.5cm}}$ ${\hspace{0.5cm}}$ $ d \leftarrow power(c, 2)$\\
+		${\hspace{0.5cm}}$ ${\hspace{0.5cm}}$ $ A \leftarrow (a / (b * d))$\\
+		${\hspace{0.5cm}}$	${\hspace{0.5cm}}$ $ exp \leftarrow (2 * n) + 1$\\
+		${\hspace{0.5cm}}$ ${\hspace{0.5cm}}$	 $ e \leftarrow power(num, exp)$\\
+		${\hspace{0.5cm}}$ ${\hspace{0.5cm}}$ $ B \leftarrow e / exp$\\
+		${\hspace{0.5cm}}$ ${\hspace{0.5cm}}$ $ AB \leftarrow (A * B)$\\
+		${\hspace{0.5cm}}$ ${\hspace{0.5cm}}$ $ans \leftarrow ans + AB$\\
+
+		${\hspace{0.5cm}}$ 3.  $ pivalue \leftarrow pi()$\\
+		${\hspace{0.5cm}}$ 4. $finalans \leftarrow ((pivalue / 2) - ans)$\\
+    	${\hspace{0.5cm}}$ 5. $return finalans$\\
+		
+\STATE \textbf{function} $POWER( c, j)$\\
+${\hspace{0.5cm}}$ $in: value of c and j$ \\
+${\hspace{0.5cm}}$ $out: value of power(c,j)$ \\
+	${\hspace{0.5cm}}$ 1. $ans \leftarrow 1.0$ \\
+	${\hspace{0.5cm}}$  2. $	if (j == 0)$ \\
+		${\hspace{1.5cm}}$ 	$ans \leftarrow 1$\\
+		${\hspace{0.5cm}}$ ${\hspace{0.5cm}}$else \\
+		${\hspace{1.5cm}}$	for $i \leq j$\\
+		${\hspace{2.5cm}}$		$ans \leftarrow c * ans$\\
+	${\hspace{0.5cm}} 3.$return ans$\\\\
+	
+\STATE \textbf{function} $FACTORIAL(i) $\\
+${\hspace{0.5cm}}$ $in: value of i $ \\
+${\hspace{0.5cm}}$ $out: value of factorial(i)$ \\
+		${\hspace{0.5cm}}$ 1. $  ans \leftarrow 1.0$\\
+		${\hspace{0.5cm}}$ 2. $if (i == 0) $\\
+		${\hspace{1.5cm}}$	$ans \leftarrow 1$\\
+		${\hspace{1cm}}$ else \\
+		${\hspace{1.5cm}}$	$for j \leq i$\\
+		${\hspace{2cm}}$	$	ans \leftarrow ans * j$\\
+		${\hspace{0.5cm}}$ 3. $return ans$
+\end{algorithmic}
+\end{algorithm}
+\begin{algorithm}
+\caption{Calculating: $arccos(x)$ using Recursive Algorithm }\\
+\begin{algorithmic}\\
+\STATE \textbf{function} $PI()$
+
+  1. $pi\_value \leftarrow 0.0$
+  
+  2.	for $ k \leq 9999 $
+		
+		${\hspace{0.5cm}}$ 	$ first \leftarrow  power(-1, k)$
+		
+		${\hspace{0.5cm}}$  $ second \leftarrow (2 * k) + 1$
+		
+		${\hspace{0.5cm}}$	$ value \leftarrow first / second$
+		
+		${\hspace{0.5cm}}$	$pi\_value \leftarrow pi\_value + value $\\
+   ${\hspace{0.7cm}}$ 3.	$pi\_value \leftarrow 4 * pi\_value$\\
+   ${\hspace{0.7cm}}$ 4.	$ return pi$\_$value\\\\
+\STATE \textbf{function} $ARCCOS(x)$\\
+${\hspace{0.5cm}}$ $in: value of x$ \\
+${\hspace{0.5cm}}$ $out: calculated value of arccos(x) in radian$ \\
+${\hspace{0.5cm}}$ $ ans \leftarrow FUNC(x,0,0)$\\
+${\hspace{0.5cm}}$ $ ans \leftarrow ((PI/2)-ans)$\\
+${\hspace{0.5cm}}$ $return ans$\\
+
+\STATE \textbf{function} $FUNC( value, steps, ans)$\\
+${\hspace{0.5cm}}$ $in: value of value, steps and ans$ \\
+${\hspace{0.5cm}}$ $out: value of func(value,steps,ans)$ \\
+		${\hspace{1cm}}$ 1. $ a = factorial(2 * steps)$\\
+		${\hspace{1cm}}$ 2. $if (Double.isInfinite(a))$\\
+		${\hspace{2cm}}$  $stepsByMethod = steps-1$\\
+		${\hspace{2cm}}$ $return ans$
+		\\${\hspace{0.5cm}}$ ${\hspace{0.5cm}}$ 3. $ b \leftarrow power(2, (2 * n))$\\
+		${\hspace{0.5cm}}$ ${\hspace{0.5cm}}$ 4.$ c \leftarrow factorial(n)$\\
+		${\hspace{0.5cm}}$ ${\hspace{0.5cm}}$ 5.$ d \leftarrow power(c, 2)$\\
+		${\hspace{0.5cm}}$ ${\hspace{0.5cm}}$ 6.$ A \leftarrow (a / (b * d))$\\
+		${\hspace{0.5cm}}$	${\hspace{0.5cm}}$ 7. $ exp \leftarrow (2 * n) + 1$\\
+		${\hspace{0.5cm}}$ ${\hspace{0.5cm}}$ 8. $ e \leftarrow power(num, exp)$\\
+		${\hspace{0.5cm}}$ ${\hspace{0.5cm}}$ 9. $ B \leftarrow e / exp$\\
+		${\hspace{0.5cm}}$ ${\hspace{0.5cm}}$ 10. $ AB \leftarrow (A * B)$\\
+		${\hspace{0.5cm}}$ ${\hspace{0.5cm}}$ 11. $ans \leftarrow ans + AB$\\
+        ${\hspace{0.5cm}}$ 12.$steps \leftarrow steps+1 $ \\
+    	${\hspace{0.5cm}}$ 13. $return FUNC(value,steps,ans)$\\
+	
+\STATE \textbf{function} $POWER( c, j)$\\
+${\hspace{0.5cm}}$ $in: value of c and j$ \\
+${\hspace{0.5cm}}$ $out: value of power(c,j)$ \\
+	${\hspace{0.5cm}}$ 1. $ans \leftarrow 1.0$ \\
+	${\hspace{0.5cm}}$  2. $	if (j == 0)$ \\
+		${\hspace{1.5cm}}$ 	$ans \leftarrow 1$\\
+		${\hspace{0.5cm}}$ ${\hspace{0.5cm}}$else \\
+		${\hspace{1.5cm}}$	for $i \leq j$\\
+		${\hspace{2.5cm}}$		$ans \leftarrow c * ans$\\
+	${\hspace{0.5cm}} 3.$return ans$\\\\
+	
+\STATE \textbf{function} $FACTORIAL(i) $\\
+${\hspace{0.5cm}}$ $in: value of i $ \\
+${\hspace{0.5cm}}$ $out: value of factorial(i)$ \\
+		${\hspace{0.5cm}}$ 1. $  ans \leftarrow 1.0$\\
+		${\hspace{0.5cm}}$ 2. $if (i == 0) $\\
+		${\hspace{1.5cm}}$	$ans \leftarrow 1$\\
+		${\hspace{1cm}}$ else \\
+		${\hspace{1.5cm}}$	$for j \leq i$\\
+		${\hspace{2cm}}$	$	ans \leftarrow ans * j$\\
+		${\hspace{0.5cm}}$ 3. $return ans$
+\end{algorithmic}
+\end{algorithm}
+\end{document}
