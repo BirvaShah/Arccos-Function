@@ -1,0 +1,115 @@
+\documentclass[11pt]{article}
+%\input{structure.tex}
+\usepackage{natbib}
+\usepackage{amsmath, algorithm, algpseudocode}
+\usepackage{graphicx}
+\usepackage[margin=0.2in]{geometry}
+\title{Function:- Arccos(x)
+\begin{large}
+\\
+\LARGE Deliverable- 2
+\\\Large Problem- 4,6
+\end{large}
+}
+\author{Birva Shah (Student ID: 40070973) }
+\date{29 July 2019}
+\begin{document}
+\maketitle
+\textbf{Github link:} https://github.com/BirvaShah/SOEN6011\_Project
+\section{Changes from D1 to D2}
+\begin{algorithm}\\
+\caption{Calculating: $arccos(x)$ using Iterative Algorithm }
+\STATE \textbf{function} $CHECKDOMAIN(input)$\\
+${\hspace{0.5cm}}$ $in:$ user input value \\
+${\hspace{0.5cm}}$ $out:$ boolean value \\
+	${\hspace{0.5cm}}$ 1. $if (input<=1.0000 \And input>=-1.0000)$\\
+	${\hspace{1.5cm}}$	return $true$\\
+	${\hspace{1cm}}$  $else$\\
+	${\hspace{1.5cm}}$  return $false$\\\\
+\STATE \textbf{function} $CONVERTTODEGREE(ansInRad)$\\
+${\hspace{0.5cm}}$ $in:$ value in radians \\
+${\hspace{0.5cm}}$ $out:$ value in degrees \\
+	${\hspace{0.5cm}}$ 1. $ansInDeg \leftarrow ansInRad*(180/pi())$\\
+	${\hspace{0.5cm}}$ 2. return $ansInDeg$\\\\
+\STATE \textbf{function} $PI()$\\
+${\hspace{0.5cm}}$ 1. $value \leftarrow 4$\\
+${\hspace{0.5cm}}$ 2. $flag \leftarrow false$\\
+${\hspace{0.5cm}}$ 3. $i \leftarrow 3$\\
+${\hspace{0.5cm}}$ 4. for $i < 999999$\\
+${\hspace{1cm}}$  $if (flag = true)$\\
+${\hspace{1.5cm}}$ $value \leftarrow value + (4.0/i)$\\
+${\hspace{1cm}}$  $else$\\
+${\hspace{1.5cm}}$ $value \leftarrow value - (4.0/i)$\\
+${\hspace{1.5cm}}$  $flag \leftarrow (!flag)$\\
+${\hspace{0.5cm}}$ 5. return $value$\\
+\end{algorithm}
+(\textbf{Comment:} I tried to include whole algorithm again but it was not aligning with the changes in bullet points I am mentioning in section 1. So I have just mentioned the changes made in the algorithm to avoid any sort of confusion.)
+\begin{itemize}
+    \item Added two more functions \textbf{convertToDegree} and \textbf{checkDomain} to the pseudo-code of iterative algorithm to calculate $Arccos(x)$.
+    \item \textbf{convertToDegree} is an additional function to convert radian values to degrees. I have added this function to support usability. User can see output in both radians and degrees.
+    \item \textbf{checkDomain} is a function that is called before the actual $Arccos$ function. This function will check if the input value is within the domain range or not i.e between -1 to 1 inclusive.
+    \item \textbf{Pi} function is modified to get more precise and accurate value of $\pi$.
+\end{itemize}
+
+\section{Debugger}
+Debugging is a process that allows us to run a program in an interactive way while watching the source code and its variables at the execution time. It has features like adding breakpoints and watchpoints that are used to stop the execution at any point of time while running a program and investigate on variables, change the values as required.
+\\\\
+To implement the function, Eclipse IDE has been used. Eclipse allows our program to run in debug mode. It has in-built default Java debugger under JDT (Java Development Tools) project. It provides features to control the execution via in-built debug commands. So I have used Eclipse default Java Debugger to check for the bugs in my function.
+\subsection{Advantages of Debugger }
+\begin{itemize}
+\item It is the ideal way to investigate on problems with our code. 
+\item It can continue the execution of already running program after making changes.
+\item It has options to enter the internal functional steps or to skip them. 
+\item It can stick to the useful information of data structures for easy interpretation.
+\item It minimizes useless information.
+\item The main \textbf{disadvantage} of debugger is that the program is not executing in the real-time so may not expose all real-time problems.
+\end{itemize} 
+\subsection{Disadvantages of Debugger}
+\begin{itemize}
+\item The main \textbf{disadvantage} of debugger is that the program is not executing in the real-time so may not expose all real-time problems.
+\end{itemize} 
+\section{Quality Attributes}
+\subsection{Correctness}
+The implemented Arccos(x) function using \textbf{Iterative Algorithm} shows correct result according to the requirements specified. Moreover, test cases are made such that it covers all boundary values and valid/invalid values and gives the expected output.
+\subsection{Efficiency}
+The function implementation code is efficient in terms of testing. It takes approx. 1.683 seconds to test all the supporting functions and the main function. Moreover, it takes approx. 0.12 seconds to run the code after user enters the real value for calculation of $arccos(x)$.
+\subsection{Maintainability}
+As standard coding style and javadoc is used in program, maintainability becomes easy. Also the code is divided into separate functions to understand the significance of each and every function in program.   
+\subsection{Robustness}
+Program implemented is robust enough to handle large input or even infinite value. It gives the output according to the conditions applied in the function.
+\subsection{Usability}
+Function is implemented in such a way that it gives output in two ways. One is in radians and other one in degrees. This way, the function has become more usable for the users to get the clear idea of values they get.
+\section{Checkstyle}
+Checkstyle is a development tool for programmers to write Java code that adheres to a coding standard. It automatically inspects the Java code if it follows the coding standard. Eclipse has plugin Checkstyle Plugin (eclipse-cs) that integrates the well-known source code analyzer Checkstyle into the Eclipse IDE. \\
+My arccos function .java file has \textbf{0 violations} for checkstyle.
+\subsection{Advantages of Checkstyle }
+\begin{itemize}
+\item There is portability between IDEs. We can enforce consistency while using checkstyle in different IDEs.
+\item It is easier to integrate with external tools as it is standalone framework.
+\item We can add our custom rule in checkstyle.
+\item It provides good programming practices that improves the quality, readability and re-usability of code. It also reduce the cost.
+\end{itemize} 
+\subsection{Disadvantages of Checkstyle}
+\begin{itemize}
+\item Checkstyle do not confirm on correctness or completeness of the code.
+\end{itemize} 
+\section{Unit Testing}
+I have used \textbf{JUnit-5} testing framework as it is easily available on Eclipse Marketplace. I have written six test cases to check different styles of input and output. The execution time of running all test cases successfully is 1.706 seconds approximately.
+\begin{thebibliography}{9}
+\bibitem{Center for statistical genetics}
+Center for statistical genetics,\\
+\url{https://genome.sph.umich.edu/wiki/Debuggers}
+\bibitem{Eclipse Marketplace}
+Eclipse Marketplace,\\
+\url{https://marketplace.eclipse.org/content/checkstyle-plug#group-details}
+\bibitem{Vogella}
+Vogella,\\
+\url{https://www.vogella.com/tutorials/Checkstyle/article.html}
+\bibitem{Developer.com}
+Developer.com\\
+\url{https://www.developer.com/java/other/article.php/2221711/Debugging-a-Java-Program-with-Eclipse.htm}
+\bibitem{Wikipedia}
+Wikipedia,\\
+\url{https://en.m.wikipedia.org/wiki/Checkstyle}
+\end{thebibliography}
+\end{document}
