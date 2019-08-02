@@ -40,7 +40,8 @@ I have reviewed F2 function source code manually as well as using tools. In manu
   \caption{Figure 1}
 \end{center} 
 \item The author has followed the coding styles particularly naming conventions of classes and functions as we had decided in a team. However, some variable names are found to be not adhering the purpose.
-\item From Figure 2, I would suggest the author to differentiate the main output and the output of supporting functions. Our calculator aims to give the clear output of the desired function only. Moreover, it is suggested that before committing the code, author should check the spelling/grammar errors seen in the output. So that the user do not misunderstand or misinterpret the output.
+\item From Figure 2, I would suggest the author to differentiate the main output and the output of supporting functions. Our calculator aims to give the clear output of the desired function only.
+\item Moreover, it is suggested that before committing the code, author should check the spelling/grammar errors seen in the output. For example, as shown in Figure 2, This is tan function "calclator" instead of "calculator". So that the user do not misunderstand or misinterpret the aim of the function.
 \begin{center}
     \includegraphics[width=0.50\textwidth]{images/1.PNG}\\
   \caption{Figure 2}
@@ -52,7 +53,8 @@ Automated code review software checks source code for compliance with a predefin
 \subsubsection{PMD:}
 PMD stands for Programming Mistake Detector.It is a free source code analysis tool which helps us to find the bugs in our java code and improve the code quality. I have used Eclipse PMD plugin to review the code.
 \begin{itemize}
-    \item Figure 3 shows the number of violations detected in the source code of Function $tan(x)$. The number of violations are more because of the console (textual) output of the function. The function uses \ttextbf{SystemPrintln} rule to print the output which is considered as violation in any automated tool. However, we can exclude such type of violations as the author may have chose to make a console application according to Project Description. Other violations such as \ttextbf{DataFlowAnomalyAnalysis, LocalVariableCouldBeFinal} can be excluded from violations by right-clicking on that violation in Violations Outline in PMD and disabling the rule. Such violations are important only in industrial based large projects, I have disabled above three unnecessary violations for this code review purpose.
+    \item Figure 3 shows the number of violations detected in the source code of Function $tan(x)$. The number of violations are more because of the console (textual) output of the function. The function uses \ttextbf{SystemPrintln} rule to print the output which is considered as violation in some automated tools. However, we can exclude such type of violations as the author may have chose to make a console application according to Project Description. 
+    \item Other violations such as \ttextbf{DataFlowAnomalyAnalysis, LocalVariableCouldBeFinal} can be excluded from violations by right-clicking on that violation in Violations Outline in PMD and disabling the rule. Such violations are important only in industry based large projects, I have disabled above three unnecessary violations for this code review purpose.
 \begin{center}
     \includegraphics[width=1.0\textwidth]{images/4.PNG}\\
     \caption{Figure 3}
@@ -82,7 +84,7 @@ PMD stands for Programming Mistake Detector.It is a free source code analysis to
 \subsubsection{Checkstyle:}
 Checkstyle is a development tool to help programmers write Java code that adheres to a coding standard. It automates the process of checking Java code to reduce the task of programmers. This makes it ideal for projects that want to enforce a coding standard. \cite{Sourceforge}
 \\\\
-I have ran the checkstyle plugin from Eclipse IDE to check the adherence of coding standards maintained in the source code. As shown in figure 8, there are 0 violations found. \textbf{This means that the author has taken care of writing a code by following the best practices and coding standards as defined in Checkstyle.}  
+I have ran the checkstyle plugin from Eclipse IDE to check the adherence of coding standards maintained in the source code. As shown in Figure 8, there are 0 violations found. \textbf{This means that the author has taken care of writing a code by following the best practices and coding standards as defined in Checkstyle.}  
 \begin{center}
     \includegraphics[width=1.0\textwidth]{images/10.PNG}\\
     \caption{Figure 8}
@@ -105,7 +107,7 @@ I have ran the checkstyle plugin from Eclipse IDE to check the adherence of codi
 \begin{large}
 \\\Large \textbf{JUnit}\\\\
 \end{large}
-I have used JUnit as a unit testing tool. It is an open-source testing framework for java programmers. The java programmer can create test cases and test his/her own code.
+I have used Eclipse plugin for JUnit as a unit testing tool. JUnit is an open-source testing framework for java programmers. The java programmer can create test cases and test his/her own code.
 \begin{itemize}
     \item As shown in Figure 1, all the test cases are passed that are provided by the author. The green color icons on left pane shows that test cases are passed.
 \begin{center}
